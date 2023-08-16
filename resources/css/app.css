@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    body {
+        @apply text-grey-700
+    }
+
+    h1 {
+        @apply text-black text-4xl font-bold;
+    }
+
+    h2 {
+        @apply text-black font-bold text-3xl;
+    }
+
+    h3 {
+        @apply text-black font-semibold text-2xl;
+    }
+
+    h4 {
+        @apply text-black font-bold text-lg;
+    }
+
+    h5 {
+        @apply text-black font-semibold;
+    }
+
+    a {
+        @apply text-blue font-semibold hover:cursor-pointer;
+    }
+}
