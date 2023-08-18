@@ -6,11 +6,14 @@ const FeatureCard = (props) => {
 
     return (
         <motion.div
-            className={`flex flex-col items-center text-center bg-grey-300 rounded-sm drop-shadow-2xl ${className || ''}`}
+            className={`
+            relative flex flex-col items-center text-center bg-white rounded-sm shadow-lg shadow-black/30 ${className || ''}`
+            }
             {...otherProps}
         >
-            <div className='bg-blue w-20 h-20 p-5 rounded-full absolute top-[-20%] flex justify-center items-center'>
-                <img src={img} alt="" />
+            <div className='bg-blue w-20 h-20 rounded-full absolute top-[-20%] flex justify-center items-center'>
+                {/* <img src={img} alt="" /> */}
+                {img}
             </div>
             <div className='p-6 pt-10'>
                 <h4 className='mb-2'>{title}</h4>

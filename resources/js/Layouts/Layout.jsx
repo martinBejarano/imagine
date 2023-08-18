@@ -4,10 +4,10 @@ import { Link } from 'react-scroll';
 
 import BrandLogo from '@/Assets/BrandLogo'
 import Menu from '@/Components/Menu';
-import { useDisplay, DisplayContext } from '@/Utils/DisplayContext';
+import { useDevice, DeviceContext } from '@/Utils/DeviceContext';
 
 export default function Layout(props) {
-    const isMobile = useDisplay();
+    const device = useDevice();
 
     const linkVariants = {
         opened: {
@@ -41,7 +41,7 @@ export default function Layout(props) {
     }
 
     return (
-        <DisplayContext.Provider value={{ isMobile }}>
+        <DeviceContext.Provider value={{ device }}>
             <div className='relative'>
                 <nav className='w-full shadow-lg shadow-black-500/500 fixed left-0 top-0 flex justify-center items-center z-50'>
                     <div className='w-full flex justify-between items-center p-6 max-w-screen-2xl bg-white'>
@@ -52,7 +52,7 @@ export default function Layout(props) {
                             transition={{ type: 'spring', damping: 15 }}
                         />
                         {/* MOBILE NAVIGATION */}
-                        <Menu className='md:hidden'>
+                        <Menu className='lg:hidden'>
                             <Menu.Trigger />
 
                             <Menu.Content
@@ -72,8 +72,7 @@ export default function Layout(props) {
                                             className='first-letter:capitalize text-black'
                                             type='button'
                                             spy={true}
-                                            // offset={100} 
-                                            scrollOffset={2500}
+                                            offset={-80}
                                             activeClass="text-blue"
                                             onClick={(e) => {
                                                 e.target.parentElement.click()
@@ -88,7 +87,7 @@ export default function Layout(props) {
 
                         {/* DESKTOP NAVIGATION */}
                         <motion.header
-                            className='hidden md:flex gap-8 justify-between items-center text-lg font-bold'
+                            className='hidden lg:flex gap-8 justify-between items-center text-lg font-bold'
                         >
                             {props.routes.map((item, idx) =>
                                 <motion.span
@@ -116,8 +115,8 @@ export default function Layout(props) {
                     </div>
                 </nav>
 
-                <main className='w-full'>{props.children}</main>
+                <main className='w-full overflow-x-hidden'>{props.children}</main>
             </div >
-        </DisplayContext.Provider >
+        </DeviceContext.Provider >
     )
 }

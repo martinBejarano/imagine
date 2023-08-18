@@ -6,12 +6,7 @@ const Review = (props) => {
 
     return (
         <motion.div
-            className={`
-            border-left border-l-[12px] border-blue rounded-md p-4 
-            
-            shadow-lg shadow-black/40
-            ${className || ''}
-            `}
+            className={`relative border-left border-l-[12px] border-blue rounded-md p-4 ${className || ''}`}
             {...otherProps}
         >
             <div className='flex items-center gap-6 mb-4'>

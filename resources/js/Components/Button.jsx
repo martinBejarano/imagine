@@ -6,7 +6,7 @@ const Button = (props) => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             {...props}
-            className={`rounded-full py-3 px-8 text-white bg-blue shadow-xl shadow-black/20 ${props.className || ''}`}
+            className={`relative rounded-full py-3 px-8 text-white bg-blue shadow-xl shadow-black/20 ${props.className || ''}`}
         />
     )
 }
