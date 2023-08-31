@@ -16,8 +16,6 @@ const Path = props => (
 
 function Menu(props) {
     const [isOpen, toggleOpen] = useCycle(false, true);
-    const containerRef = useRef(null);
-
 
     return (
         <MenuContext.Provider value={{ isOpen, toggleOpen }}>

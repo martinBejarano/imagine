@@ -20,6 +20,7 @@
 
 <body class="font-sans antialiased">
     @inertia
+    {{-- <div id="snackbar-container"></div> --}}
 </body>
 
 </html>

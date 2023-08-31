@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
     body {
-        @apply text-grey-700;
+        @apply text-grey-400 font-light;
     }
 
     h1 {
@@ -37,8 +36,9 @@
     }
 
     input,
-    textarea {
-        @apply w-full text-black;
+    textarea,
+    [type="text"] {
+        @apply w-full text-black border-grey-600;
 
         &:focus {
             @apply border-solid border-[1px] border-blue;
@@ -46,14 +46,17 @@
     }
 
     label {
-        @apply text-black font-semibold;
+        @apply text-black;
     }
-
 }
 
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
-.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
     @apply relative mt-8;
+}
+
+.swiper-slide {
+    @apply flex justify-center children:flex-grow;
 }

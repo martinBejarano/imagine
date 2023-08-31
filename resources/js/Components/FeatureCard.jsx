@@ -12,8 +12,8 @@ const FeatureCard = (props) => {
             {...otherProps}
         >
             <div className='bg-blue w-20 h-20 rounded-full absolute top-[-20%] flex justify-center items-center'>
-                {/* <img src={img} alt="" /> */}
-                {img}
+                <img className='w-[40px] h-[40px] object-contain' src={`http://127.0.0.1:8000/images/${img.name}`} alt={img.alt} />
+                {/* {img} */}
             </div>
             <div className='p-6 pt-10'>
                 <h4 className='mb-2'>{title}</h4>

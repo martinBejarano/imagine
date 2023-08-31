@@ -1,5 +1,6 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
+import tailwindChildren from 'tailwind-children';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -13,18 +14,20 @@ export default {
     theme: {
         container: {
             center: true,
-            padding: '1.5rem'
+            padding: '1rem'
         },
         extend: {
             colors: {
                 'blue': '#4285f4',
                 grey: {
                     300: '#F1F1F1',
+                    400: '#808080',
                     500: '#F6F6F6',
+                    600: '#ced4da',
                     700: '#6B6B6B',
                 },
-                green:{
-                    500:'#8BC34A'
+                green: {
+                    500: '#8BC34A'
                 }
             },
             boxShadow: {
@@ -40,5 +43,5 @@ export default {
         },
     },
 
-    plugins: [forms],
+    plugins: [forms, tailwindChildren],
 };

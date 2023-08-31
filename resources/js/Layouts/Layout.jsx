@@ -43,8 +43,8 @@ export default function Layout(props) {
     return (
         <DeviceContext.Provider value={{ device }}>
             <div className='relative'>
-                <nav className='w-full shadow-lg shadow-black-500/500 fixed left-0 top-0 flex justify-center items-center z-50'>
-                    <div className='w-full flex justify-between items-center p-6 max-w-screen-2xl bg-white'>
+                <nav className='w-full shadow-lg shadow-black-500/500 fixed left-0 top-0 flex justify-center items-center z-50 bg-white'>
+                    <div className='w-full flex justify-between items-center p-6 max-w-screen-2xl '>
                         <BrandLogo
                             className='w-40 z-50'
                             initial={{ opacity: 0, x: -100 }}

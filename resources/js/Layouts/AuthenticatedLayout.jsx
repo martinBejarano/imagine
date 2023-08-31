@@ -4,6 +4,7 @@ import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/react';
+import { ModalProvider, ModalContainer } from '../Components/ModalTest';
 
 export default function Authenticated({ user, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
@@ -21,8 +22,17 @@ export default function Authenticated({ user, header, children }) {
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href={route('dashboard')} active={route().current('dashboard')}>
-                                    Dashboard
+                                <NavLink href={route('features')} active={route().current('features')}>
+                                    Features
+                                </NavLink>
+                                <NavLink href={route('assets')} active={route().current('assets')}>
+                                    Assets
+                                </NavLink>
+                                <NavLink href={route('members')} active={route().current('members')}>
+                                    Members
+                                </NavLink>
+                                <NavLink href={route('testimonials')} active={route().current('testimonials')}>
+                                    Testimonials
                                 </NavLink>
                             </div>
                         </div>
@@ -92,8 +102,17 @@ export default function Authenticated({ user, header, children }) {
 
                 <div className={(showingNavigationDropdown ? 'block' : 'hidden') + ' sm:hidden'}>
                     <div className="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')}>
-                            Dashboard
+                        <ResponsiveNavLink href={route('features')} active={route().current('features')}>
+                            Features
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink href={route('assets')} active={route().current('assets')}>
+                            Assets
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink href={route('members')} active={route().current('members')}>
+                            Members
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink href={route('testimonials')} active={route().current('testimonials')}>
+                            Testimonials
                         </ResponsiveNavLink>
                     </div>
 
@@ -120,6 +139,7 @@ export default function Authenticated({ user, header, children }) {
             )}
 
             <main>{children}</main>
+            <ModalContainer />
         </div>
     );
 }
